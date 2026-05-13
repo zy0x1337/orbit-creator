@@ -1,0 +1,189 @@
+/* ============================================================
+   ORBIT CREATOR — Design Tokens
+   Art direction: Creator/Freelancer Revenue Tracker
+   Palette: warm dark surfaces, bronze primary, jade growth,
+            terra risk — all streams visualized as planets
+   Typography: Cormorant Garamond (display) + Epilogue (body)
+   Density: balanced — editorial feel with product clarity
+   ============================================================ */
+
+:root {
+  /* ── Type Scale (fluid clamp) ── */
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --text-hero: clamp(3rem,     0.5rem  + 7vw,    7.5rem);
+
+  /* ── 4px Spacing ── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ── Content Widths ── */
+  --content-narrow:  640px;
+  --content-default: 960px;
+  --content-wide:    1200px;
+  --content-full:    100%;
+
+  /* ── Radius ── */
+  --radius-sm:   0.375rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-2xl:  1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Transitions ── */
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow:        400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ── Typography ── */
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body:    'Epilogue', 'Helvetica Neue', sans-serif;
+}
+
+/* ── Dark Mode (Default) ── */
+:root,
+[data-theme="dark"] {
+  /* Surfaces — warm dark, like scorched parchment */
+  --color-bg:               #0d0b09;
+  --color-surface:          #131109;
+  --color-surface-2:        #19160f;
+  --color-surface-offset:   #1f1b13;
+  --color-surface-offset-2: #252019;
+  --color-surface-dynamic:  #2e2920;
+  --color-divider:          #2a2419;
+  --color-border:           rgba(184, 115, 51, 0.14);
+
+  /* Text */
+  --color-text:         #e8dcc8;
+  --color-text-muted:   #9a8d7a;
+  --color-text-faint:   #5c5448;
+  --color-text-inverse: #120f0a;
+
+  /* Bronze — Primary / Revenue Positive */
+  --color-primary:           #b87333;
+  --color-primary-hover:     #d4893c;
+  --color-primary-active:    #8c5520;
+  --color-primary-highlight: rgba(184, 115, 51, 0.12);
+  --color-primary-glow:      rgba(184, 115, 51, 0.18);
+
+  /* Jade — Growth / Positive Trends */
+  --color-jade:           #4a9e8e;
+  --color-jade-hover:     #5bbfad;
+  --color-jade-active:    #317d6f;
+  --color-jade-highlight: rgba(74, 158, 142, 0.10);
+  --color-jade-glow:      rgba(74, 158, 142, 0.15);
+
+  /* Terra — Risk / Overdue / Warning */
+  --color-terra:           #c4533a;
+  --color-terra-hover:     #e0634a;
+  --color-terra-active:    #9e3f2b;
+  --color-terra-highlight: rgba(196, 83, 58, 0.10);
+  --color-terra-glow:      rgba(196, 83, 58, 0.15);
+
+  /* Gold — Passive / Affiliate income */
+  --color-gold:           #d4a03c;
+  --color-gold-hover:     #e8b84e;
+  --color-gold-highlight: rgba(212, 160, 60, 0.10);
+
+  /* Stream Planet Colors (6 income-type identities) */
+  --planet-client:    #b87333;  /* Bronze  — direct client work    */
+  --planet-product:   #4a9e8e;  /* Jade    — digital products       */
+  --planet-content:   #8b6db5;  /* Amethyst — content / creator     */
+  --planet-affiliate: #d4a03c;  /* Gold    — affiliate / passive    */
+  --planet-retainer:  #5b91c8;  /* Steel   — recurring retainers    */
+  --planet-other:     #7a8a7c;  /* Moss    — miscellaneous          */
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.35);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.45);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.55);
+  --shadow-glow-bronze: 0 0 24px rgba(184, 115, 51, 0.20);
+  --shadow-glow-jade:   0 0 24px rgba(74, 158, 142, 0.18);
+}
+
+/* ── Light Mode ── */
+[data-theme="light"] {
+  --color-bg:               #f5f0e8;
+  --color-surface:          #faf7f2;
+  --color-surface-2:        #fffdfb;
+  --color-surface-offset:   #ede8df;
+  --color-surface-offset-2: #e5ded3;
+  --color-surface-dynamic:  #d8d0c4;
+  --color-divider:          #cdc5b8;
+  --color-border:           rgba(120, 80, 30, 0.14);
+
+  --color-text:         #1a1510;
+  --color-text-muted:   #6b5e4e;
+  --color-text-faint:   #a89880;
+  --color-text-inverse: #f5f0e8;
+
+  --color-primary:           #8c5520;
+  --color-primary-hover:     #a8682a;
+  --color-primary-active:    #6a3e12;
+  --color-primary-highlight: rgba(140, 85, 32, 0.10);
+  --color-primary-glow:      rgba(140, 85, 32, 0.15);
+
+  --color-jade:           #2e7a6c;
+  --color-jade-hover:     #3d9080;
+  --color-jade-highlight: rgba(46, 122, 108, 0.10);
+
+  --color-terra:           #a63e28;
+  --color-terra-hover:     #c04c33;
+  --color-terra-highlight: rgba(166, 62, 40, 0.10);
+
+  --color-gold:           #b07e20;
+  --color-gold-hover:     #c99030;
+  --color-gold-highlight: rgba(176, 126, 32, 0.10);
+
+  --shadow-sm: 0 1px 3px rgba(30,20,10,0.08);
+  --shadow-md: 0 4px 16px rgba(30,20,10,0.10);
+  --shadow-lg: 0 12px 40px rgba(30,20,10,0.14);
+  --shadow-glow-bronze: 0 0 24px rgba(140, 85, 32, 0.16);
+  --shadow-glow-jade:   0 0 24px rgba(46, 122, 108, 0.14);
+}
+
+/* System preference fallback */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --color-bg:               #f5f0e8;
+    --color-surface:          #faf7f2;
+    --color-surface-2:        #fffdfb;
+    --color-surface-offset:   #ede8df;
+    --color-surface-offset-2: #e5ded3;
+    --color-surface-dynamic:  #d8d0c4;
+    --color-divider:          #cdc5b8;
+    --color-border:           rgba(120, 80, 30, 0.14);
+    --color-text:         #1a1510;
+    --color-text-muted:   #6b5e4e;
+    --color-text-faint:   #a89880;
+    --color-text-inverse: #f5f0e8;
+    --color-primary:           #8c5520;
+    --color-primary-hover:     #a8682a;
+    --color-primary-active:    #6a3e12;
+    --color-primary-highlight: rgba(140, 85, 32, 0.10);
+    --color-jade:           #2e7a6c;
+    --color-jade-hover:     #3d9080;
+    --color-terra:          #a63e28;
+    --color-terra-hover:    #c04c33;
+    --color-gold:           #b07e20;
+    --shadow-sm: 0 1px 3px rgba(30,20,10,0.08);
+    --shadow-md: 0 4px 16px rgba(30,20,10,0.10);
+    --shadow-lg: 0 12px 40px rgba(30,20,10,0.14);
+  }
+}
