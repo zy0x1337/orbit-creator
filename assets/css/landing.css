@@ -391,6 +391,7 @@ nav.scrolled {
 }
 
 /* Orbit rings — proportional to --map-size */
+/* Original px values: 160, 260, 360, 440 out of 480 */
 .orbit-ring {
   position: absolute;
   top: 50%;
@@ -401,7 +402,6 @@ nav.scrolled {
   pointer-events: none;
 }
 
-/* Ring sizes as ratios of --map-size (original: 160, 260, 360, 440 of 480) */
 .orbit-ring:nth-child(1) {
   width:  calc(var(--map-size) * 0.3333);
   height: calc(var(--map-size) * 0.3333);
@@ -430,7 +430,7 @@ nav.scrolled {
   transform-origin: center center;
 }
 
-/* Override inline px sizes with fluid equivalents via data-size attr */
+/* Fluid planet-track sizes via data-size attribute */
 .planet-track[data-size="160"] {
   width:  calc(var(--map-size) * 0.3333) !important;
   height: calc(var(--map-size) * 0.3333) !important;
@@ -438,6 +438,10 @@ nav.scrolled {
 .planet-track[data-size="260"] {
   width:  calc(var(--map-size) * 0.5417) !important;
   height: calc(var(--map-size) * 0.5417) !important;
+}
+.planet-track[data-size="310"] {
+  width:  calc(var(--map-size) * 0.6458) !important;
+  height: calc(var(--map-size) * 0.6458) !important;
 }
 .planet-track[data-size="360"] {
   width:  calc(var(--map-size) * 0.75) !important;

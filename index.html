@@ -70,7 +70,6 @@
     ═══════════════════════════════════════════ -->
     <section id="hero" aria-label="Hero">
       <div class="hero-bg">
-        <!-- Warm copper-nebula gradient — no external image dependency -->
         <canvas id="canvas-nebula" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
       </div>
       <canvas id="canvas-stars" aria-hidden="true"></canvas>
@@ -168,11 +167,11 @@
 
         <div class="orbital-viewport reveal" role="img" aria-label="Interactive orbital map showing five income stream planets in orbit around your business">
 
-          <!-- Orbit rings -->
-          <div class="orbit-ring" style="width:160px;height:160px;"></div>
-          <div class="orbit-ring" style="width:260px;height:260px;"></div>
-          <div class="orbit-ring" style="width:360px;height:360px;"></div>
-          <div class="orbit-ring" style="width:440px;height:440px;"></div>
+          <!-- Orbit rings — sized via CSS nth-child, no inline styles needed -->
+          <div class="orbit-ring"></div>
+          <div class="orbit-ring"></div>
+          <div class="orbit-ring"></div>
+          <div class="orbit-ring"></div>
 
           <!-- Sun = Your Business -->
           <div class="orbit-sun" aria-hidden="true">
@@ -180,51 +179,51 @@
           </div>
 
           <!-- Planet 1 — Client Work (Bronze, fast, large) -->
-          <div class="planet-track" style="width:260px;height:260px; animation-duration:12s; animation-name:orbitSpin;">
+          <div class="planet-track" data-size="260" style="animation-duration:12s; animation-name:orbitSpin;">
             <div class="planet-body" style="width:34px;height:34px; background:radial-gradient(circle at 35% 30%, #e8a060, #b87333 55%, #6a3810); box-shadow:0 0 14px rgba(184,115,51,0.5);">
               <div class="planet-tooltip">
                 <strong>Client Work</strong>
-                <span>€3,200 / mo</span>
+                <span>&euro;3,200 / mo</span>
               </div>
             </div>
           </div>
 
           <!-- Planet 2 — Digital Products (Jade, medium) -->
-          <div class="planet-track" style="width:360px;height:360px; animation-duration:20s; animation-name:orbitSpin;">
+          <div class="planet-track" data-size="360" style="animation-duration:20s; animation-name:orbitSpin;">
             <div class="planet-body" style="width:26px;height:26px; background:radial-gradient(circle at 35% 30%, #80d4c4, #4a9e8e 55%, #1f5c52); box-shadow:0 0 12px rgba(74,158,142,0.45);">
               <div class="planet-tooltip">
                 <strong>Digital Products</strong>
-                <span>€840 / mo</span>
+                <span>&euro;840 / mo</span>
               </div>
             </div>
           </div>
 
-          <!-- Planet 3 — Content (Amethyst, slow, mid orbit) -->
-          <div class="planet-track" style="width:160px;height:160px; animation-duration:28s; animation-name:orbitSpin;">
+          <!-- Planet 3 — Content (Amethyst, slow, inner orbit) -->
+          <div class="planet-track" data-size="160" style="animation-duration:28s; animation-name:orbitSpin;">
             <div class="planet-body" style="width:18px;height:18px; background:radial-gradient(circle at 35% 30%, #c4a0e8, #8b6db5 55%, #4a2a7a); box-shadow:0 0 10px rgba(139,109,181,0.4);">
               <div class="planet-tooltip">
                 <strong>Content</strong>
-                <span>€320 / mo</span>
+                <span>&euro;320 / mo</span>
               </div>
             </div>
           </div>
 
           <!-- Planet 4 — Affiliate (Gold, very slow, outer) -->
-          <div class="planet-track" style="width:440px;height:440px; animation-duration:36s; animation-name:orbitSpin;">
+          <div class="planet-track" data-size="440" style="animation-duration:36s; animation-name:orbitSpin;">
             <div class="planet-body" style="width:20px;height:20px; background:radial-gradient(circle at 35% 30%, #f0cc70, #d4a03c 55%, #8a5e10); box-shadow:0 0 10px rgba(212,160,60,0.4);">
               <div class="planet-tooltip">
                 <strong>Affiliate</strong>
-                <span>€210 / mo</span>
+                <span>&euro;210 / mo</span>
               </div>
             </div>
           </div>
 
-          <!-- Planet 5 — Retainer (Steel, medium-fast) -->
-          <div class="planet-track" style="width:310px;height:310px; animation-duration:16s; animation-name:orbitSpin; animation-direction:reverse;">
+          <!-- Planet 5 — Retainer (Steel, medium-fast, reverse) -->
+          <div class="planet-track" data-size="310" style="animation-duration:16s; animation-name:orbitSpin; animation-direction:reverse;">
             <div class="planet-body" style="width:22px;height:22px; background:radial-gradient(circle at 35% 30%, #90bce0, #5b91c8 55%, #2a4e7a); box-shadow:0 0 10px rgba(91,145,200,0.4);">
               <div class="planet-tooltip">
                 <strong>Retainer</strong>
-                <span>€1,500 / mo</span>
+                <span>&euro;1,500 / mo</span>
               </div>
             </div>
           </div>
@@ -232,11 +231,11 @@
         </div><!-- /orbital-viewport -->
 
         <div class="orbital-legend reveal" aria-label="Stream legend">
-          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-client);"></div>Client Work &mdash; €3,200</div>
-          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-retainer);"></div>Retainer &mdash; €1,500</div>
-          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-product);"></div>Products &mdash; €840</div>
-          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-content);"></div>Content &mdash; €320</div>
-          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-affiliate);"></div>Affiliate &mdash; €210</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-client);"></div>Client Work &mdash; &euro;3,200</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-retainer);"></div>Retainer &mdash; &euro;1,500</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-product);"></div>Products &mdash; &euro;840</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-content);"></div>Content &mdash; &euro;320</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-affiliate);"></div>Affiliate &mdash; &euro;210</div>
         </div>
 
       </div>
@@ -305,7 +304,7 @@
               <div style="height:1px; background:var(--color-divider);"></div>
               <div style="display:flex; justify-content:space-between;">
                 <span style="font-size:var(--text-sm); color:var(--color-text-muted);">Acme Corp</span>
-                <span style="font-family:var(--font-display); font-size:var(--text-xl); color:var(--color-text); font-variant-numeric:tabular-nums;">€2,400</span>
+                <span style="font-family:var(--font-display); font-size:var(--text-xl); color:var(--color-text); font-variant-numeric:tabular-nums;">&euro;2,400</span>
               </div>
               <div style="height:1px; background:var(--color-divider);"></div>
               <div style="display:flex; justify-content:space-between;">
@@ -314,7 +313,7 @@
               </div>
               <div style="display:flex; justify-content:space-between;">
                 <span style="font-size:var(--text-xs); color:var(--color-text-faint);">Due May 15, 2026</span>
-                <span style="font-family:var(--font-display); font-size:var(--text-lg); color:var(--color-text-muted); font-variant-numeric:tabular-nums;">€800</span>
+                <span style="font-family:var(--font-display); font-size:var(--text-lg); color:var(--color-text-muted); font-variant-numeric:tabular-nums;">&euro;800</span>
               </div>
             </div>
           </article>
@@ -669,7 +668,6 @@
     }
 
     /* ── Counter-rotate planets so they stay upright ── */
-    /* Handled via CSS @keyframes counterRotate on .planet-body */
     document.querySelectorAll('.planet-track').forEach(function(track) {
       var body = track.querySelector('.planet-body');
       if (!body) return;
