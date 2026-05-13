@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbit — Every income stream, in motion.</title>
+  <meta name="description" content="Orbit is the revenue tracker for creators and freelancers who run more than one income stream. All of it, visualized as a living universe.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/landing.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <a href="#streams"      class="mobile-menu-link">Streams</a>
+    <a href="#orbital"      class="mobile-menu-link">How it works</a>
+    <a href="#features"     class="mobile-menu-link">Features</a>
+    <a href="#pricing"      class="mobile-menu-link">Pricing</a>
+    <div class="mobile-menu-actions">
+      <a href="#" class="btn btn-ghost">Sign in</a>
+      <a href="#" class="btn btn-primary">Begin your orbit</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav aria-label="Main navigation" id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Orbit home">
+      <svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <ellipse cx="13" cy="13" rx="10" ry="4" stroke="#b87333" stroke-width="1.2" transform="rotate(-35 13 13)" opacity="0.5"/>
+        <ellipse cx="13" cy="13" rx="10" ry="4" stroke="#b87333" stroke-width="1.2" transform="rotate(35 13 13)" opacity="0.85"/>
+        <circle cx="13" cy="13" r="2.5" fill="#b87333"/>
+        <circle cx="20.5" cy="7" r="1.5" fill="#e8dcc8" opacity="0.65"/>
+      </svg>
+      <span>Orbit</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#streams">Streams</a></li>
+      <li><a href="#orbital">How it works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="nav-cta">
+        <a href="#" class="btn btn-ghost">Sign in</a>
+        <a href="#" class="btn btn-primary">Get started</a>
+      </div>
+      <button class="nav-theme-toggle" data-theme-toggle aria-label="Switch theme">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section id="hero" aria-label="Hero">
+      <div class="hero-bg">
+        <!-- Warm copper-nebula gradient — no external image dependency -->
+        <canvas id="canvas-nebula" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+      </div>
+      <canvas id="canvas-stars" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-catalogue">
+          <span class="hero-catalogue-rule" aria-hidden="true"></span>
+          Revenue Intelligence — For Independents
+        </div>
+        <h1 class="hero-title">
+          <em>Every stream,</em>
+          <strong>in orbit.</strong>
+        </h1>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="hero-subtitle">Track every client, product, and income stream as a planet in your living business universe. Know what&rsquo;s moving. Know what&rsquo;s stalling.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary btn-lg">Begin your orbit &mdash; free</a>
+          <a href="#orbital" class="btn btn-outline btn-lg">See it in motion</a>
+        </div>
+      </div>
+
+      <div class="hero-coordinates" aria-hidden="true">
+        <span>Streams &middot; 6 active</span>
+        <span>MRR &middot; in motion</span>
+        <span>2026.362</span>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <div class="hero-scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         STREAMS INTRO
+    ═══════════════════════════════════════════ -->
+    <section id="streams" aria-labelledby="streams-title">
+      <div class="container">
+        <div class="streams-layout">
+
+          <div class="streams-header reveal">
+            <div class="section-eyebrow">
+              <span class="section-eyebrow-rule" aria-hidden="true"></span>
+              Income Streams
+            </div>
+            <h2 class="section-title" id="streams-title">Every source of income<br><em>becomes a planet.</em></h2>
+            <p class="section-desc">Whether you invoice clients, sell digital products, or earn from content &mdash; Orbit maps everything into a single visual universe. The bigger the planet, the bigger the revenue.</p>
+          </div>
+
+          <div class="streams-grid reveal" role="list">
+            <div class="stream-pill" role="listitem">
+              <span class="stream-dot" style="background: var(--planet-client);"></span>
+              Client Work
+            </div>
+            <div class="stream-pill" role="listitem">
+              <span class="stream-dot" style="background: var(--planet-product);"></span>
+              Digital Products
+            </div>
+            <div class="stream-pill" role="listitem">
+              <span class="stream-dot" style="background: var(--planet-content);"></span>
+              Content & Creator
+            </div>
+            <div class="stream-pill" role="listitem">
+              <span class="stream-dot" style="background: var(--planet-affiliate);"></span>
+              Affiliate & Passive
+            </div>
+            <div class="stream-pill" role="listitem">
+              <span class="stream-dot" style="background: var(--planet-retainer);"></span>
+              Retainers
+            </div>
+            <div class="stream-pill" role="listitem">
+              <span class="stream-dot" style="background: var(--planet-other);"></span>
+              Other Income
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ORBITAL MAP DEMO
+    ═══════════════════════════════════════════ -->
+    <section id="orbital" aria-labelledby="orbital-title">
+      <div class="container">
+
+        <div class="orbital-header reveal">
+          <div class="section-eyebrow" style="justify-content:center;">
+            <span class="section-eyebrow-rule" aria-hidden="true"></span>
+            The Orbital Map
+            <span class="section-eyebrow-rule" aria-hidden="true" style="transform:scaleX(-1)"></span>
+          </div>
+          <h2 class="section-title" id="orbital-title" style="text-align:center;">Your business universe,<br><em>always in motion.</em></h2>
+          <p class="section-desc" style="margin-inline:auto; text-align:center;">Each planet is an income stream. Radius = revenue size. Speed = activity level. Hover to explore.</p>
+        </div>
+
+        <div class="orbital-viewport reveal" role="img" aria-label="Interactive orbital map showing five income stream planets in orbit around your business">
+
+          <!-- Orbit rings -->
+          <div class="orbit-ring" style="width:160px;height:160px;"></div>
+          <div class="orbit-ring" style="width:260px;height:260px;"></div>
+          <div class="orbit-ring" style="width:360px;height:360px;"></div>
+          <div class="orbit-ring" style="width:440px;height:440px;"></div>
+
+          <!-- Sun = Your Business -->
+          <div class="orbit-sun" aria-hidden="true">
+            <span class="orbit-sun-label">Your Business</span>
+          </div>
+
+          <!-- Planet 1 — Client Work (Bronze, fast, large) -->
+          <div class="planet-track" style="width:260px;height:260px; animation-duration:12s; animation-name:orbitSpin;">
+            <div class="planet-body" style="width:34px;height:34px; background:radial-gradient(circle at 35% 30%, #e8a060, #b87333 55%, #6a3810); box-shadow:0 0 14px rgba(184,115,51,0.5);">
+              <div class="planet-tooltip">
+                <strong>Client Work</strong>
+                <span>€3,200 / mo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Planet 2 — Digital Products (Jade, medium) -->
+          <div class="planet-track" style="width:360px;height:360px; animation-duration:20s; animation-name:orbitSpin;">
+            <div class="planet-body" style="width:26px;height:26px; background:radial-gradient(circle at 35% 30%, #80d4c4, #4a9e8e 55%, #1f5c52); box-shadow:0 0 12px rgba(74,158,142,0.45);">
+              <div class="planet-tooltip">
+                <strong>Digital Products</strong>
+                <span>€840 / mo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Planet 3 — Content (Amethyst, slow, mid orbit) -->
+          <div class="planet-track" style="width:160px;height:160px; animation-duration:28s; animation-name:orbitSpin;">
+            <div class="planet-body" style="width:18px;height:18px; background:radial-gradient(circle at 35% 30%, #c4a0e8, #8b6db5 55%, #4a2a7a); box-shadow:0 0 10px rgba(139,109,181,0.4);">
+              <div class="planet-tooltip">
+                <strong>Content</strong>
+                <span>€320 / mo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Planet 4 — Affiliate (Gold, very slow, outer) -->
+          <div class="planet-track" style="width:440px;height:440px; animation-duration:36s; animation-name:orbitSpin;">
+            <div class="planet-body" style="width:20px;height:20px; background:radial-gradient(circle at 35% 30%, #f0cc70, #d4a03c 55%, #8a5e10); box-shadow:0 0 10px rgba(212,160,60,0.4);">
+              <div class="planet-tooltip">
+                <strong>Affiliate</strong>
+                <span>€210 / mo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Planet 5 — Retainer (Steel, medium-fast) -->
+          <div class="planet-track" style="width:310px;height:310px; animation-duration:16s; animation-name:orbitSpin; animation-direction:reverse;">
+            <div class="planet-body" style="width:22px;height:22px; background:radial-gradient(circle at 35% 30%, #90bce0, #5b91c8 55%, #2a4e7a); box-shadow:0 0 10px rgba(91,145,200,0.4);">
+              <div class="planet-tooltip">
+                <strong>Retainer</strong>
+                <span>€1,500 / mo</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /orbital-viewport -->
+
+        <div class="orbital-legend reveal" aria-label="Stream legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-client);"></div>Client Work &mdash; €3,200</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-retainer);"></div>Retainer &mdash; €1,500</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-product);"></div>Products &mdash; €840</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-content);"></div>Content &mdash; €320</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--planet-affiliate);"></div>Affiliate &mdash; €210</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FEATURES
+    ═══════════════════════════════════════════ -->
+    <section id="features" aria-labelledby="features-title">
+      <div class="container">
+
+        <div class="reveal">
+          <div class="section-eyebrow">
+            <span class="section-eyebrow-rule" aria-hidden="true"></span>
+            Capabilities
+          </div>
+          <h2 class="section-title" id="features-title">Built for the <em>multi-stream independent.</em></h2>
+          <p class="section-desc">Not a spreadsheet. Not a accounting tool. Orbit gives you the intelligence to understand your business as a living system.</p>
+        </div>
+
+        <div class="features-grid">
+
+          <!-- Feature 1 — Clarity -->
+          <article class="feature-card reveal">
+            <div class="feature-number" aria-hidden="true">I</div>
+            <div class="feature-tag">Clarity</div>
+            <h3>See every stream at once. No tabs required.</h3>
+            <p>The Orbital Map puts all your revenue sources in a single view. Spot at a glance which streams are growing, stalling, or drifting away.</p>
+            <ul class="feature-metrics" aria-label="Key metrics">
+              <li><strong>360&deg;</strong><span>business overview</span></li>
+              <li><strong>&minus;70%</strong><span>less tab switching</span></li>
+            </ul>
+          </article>
+
+          <!-- Feature 2 — Momentum -->
+          <article class="feature-card reveal" style="--reveal-delay:0.1s">
+            <div class="feature-number" aria-hidden="true">II</div>
+            <div class="feature-tag" style="background:var(--color-jade-highlight); color:var(--color-jade); border-color:rgba(74,158,142,0.2);">Momentum</div>
+            <h3>Track what&rsquo;s moving. Catch what&rsquo;s stalling.</h3>
+            <p>Orbit surfaces trends the moment they appear &mdash; not when you notice a missed invoice three weeks later. Planet speed reflects activity in real time.</p>
+            <ul class="feature-metrics" aria-label="Key metrics">
+              <li><strong>3&times;</strong><span>faster to spot risk</span></li>
+              <li><strong>Live</strong><span>activity indicators</span></li>
+            </ul>
+          </article>
+
+          <!-- Feature 3 — Control (wide card) -->
+          <article class="feature-card feature-card-wide reveal" style="--reveal-delay:0.2s">
+            <div>
+              <div class="feature-number" aria-hidden="true">III</div>
+              <div class="feature-tag" style="background:var(--color-terra-highlight); color:var(--color-terra); border-color:rgba(196,83,58,0.2);">Control</div>
+              <h3>Invoices, projects, and time &mdash; unified.</h3>
+              <p>Send invoices, log hours, and track project status without leaving your universe. Every action connects back to its planet &mdash; so you always know which stream the work belongs to.</p>
+              <ul class="feature-metrics" aria-label="Key metrics">
+                <li><strong>1</strong><span>place for all ops</span></li>
+                <li><strong>Auto</strong><span>overdue detection</span></li>
+                <li><strong>PDF</strong><span>invoice export</span></li>
+              </ul>
+            </div>
+            <!-- Mini invoice preview -->
+            <div aria-hidden="true" style="background:var(--color-surface-offset); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:var(--space-6); display:flex; flex-direction:column; gap:var(--space-3);">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-family:var(--font-body); font-size:var(--text-xs); color:var(--color-text-faint); letter-spacing:0.08em; text-transform:uppercase;">Invoice #042</span>
+                <span style="display:inline-flex; align-items:center; padding:2px 10px; border-radius:99px; background:var(--color-jade-highlight); color:var(--color-jade); font-size:var(--text-xs); font-weight:600;">Paid</span>
+              </div>
+              <div style="height:1px; background:var(--color-divider);"></div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="font-size:var(--text-sm); color:var(--color-text-muted);">Acme Corp</span>
+                <span style="font-family:var(--font-display); font-size:var(--text-xl); color:var(--color-text); font-variant-numeric:tabular-nums;">€2,400</span>
+              </div>
+              <div style="height:1px; background:var(--color-divider);"></div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="font-size:var(--text-xs); color:var(--color-text-faint);">Due May 1, 2026</span>
+                <span style="display:inline-flex; align-items:center; padding:2px 10px; border-radius:99px; background:var(--color-terra-highlight); color:var(--color-terra); font-size:var(--text-xs); font-weight:600;">Overdue</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="font-size:var(--text-xs); color:var(--color-text-faint);">Due May 15, 2026</span>
+                <span style="font-family:var(--font-display); font-size:var(--text-lg); color:var(--color-text-muted); font-variant-numeric:tabular-nums;">€800</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         TESTIMONIALS
+    ═══════════════════════════════════════════ -->
+    <section id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-eyebrow">
+            <span class="section-eyebrow-rule" aria-hidden="true"></span>
+            From independents
+          </div>
+          <h2 class="section-title" id="testimonials-title">Creators and freelancers<br><em>across the universe.</em></h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card reveal">
+            <div class="stars" aria-label="5 out of 5 stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <p class="testimonial-text">&ldquo;I have six income streams and I used to manage them in three different Notion databases. Orbit replaced all of that. I open it every morning just to look at it.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">MJ</div>
+              <div>
+                <div class="author-name">Marta Johansson</div>
+                <div class="author-role">UX Freelancer &amp; Course Creator</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal" style="--reveal-delay:0.1s">
+            <div class="stars" aria-label="5 out of 5 stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <p class="testimonial-text">&ldquo;The moment a planet slows down, I know a client is drifting. That visual signal alone has saved me from losing two retainers this year.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">TK</div>
+              <div>
+                <div class="author-name">Thomas Keller</div>
+                <div class="author-role">Brand Consultant, Berlin</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal" style="--reveal-delay:0.2s">
+            <div class="stars" aria-label="5 out of 5 stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <p class="testimonial-text">&ldquo;Finally a tool that thinks like I work &mdash; not like an accountant does. My business isn&rsquo;t a spreadsheet. It&rsquo;s a solar system.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">LR</div>
+              <div>
+                <div class="author-name">Lena Richter</div>
+                <div class="author-role">Newsletter Author &amp; Affiliate Creator</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PRICING
+    ═══════════════════════════════════════════ -->
+    <section id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="reveal" style="text-align:center;">
+          <div class="section-eyebrow" style="justify-content:center;">
+            <span class="section-eyebrow-rule" aria-hidden="true"></span>
+            Tiers
+          </div>
+          <h2 class="section-title" id="pricing-title" style="text-align:center;">Choose your <em>orbit.</em></h2>
+          <p class="section-desc" style="margin-inline:auto; text-align:center;">Start free. Upgrade when your universe expands.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- Stargazer — Free -->
+          <div class="pricing-card reveal">
+            <div class="pricing-tier">Stargazer</div>
+            <div class="pricing-price">
+              <span class="price-amount">Free</span>
+              <span class="price-period">forever</span>
+            </div>
+            <p class="pricing-desc">For solo explorers mapping their first income constellations.</p>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features" role="list">
+              <li>3 active streams</li>
+              <li>1 user</li>
+              <li>Orbital Map view</li>
+              <li>Manual revenue entry</li>
+              <li>5 invoices / month</li>
+              <li class="muted">CSV import</li>
+              <li class="muted">Revenue calendar</li>
+              <li class="muted">Time tracking</li>
+            </ul>
+            <a href="#" class="btn-pricing-outline">Begin your orbit &mdash; free</a>
+          </div>
+
+          <!-- Freelancer -->
+          <div class="pricing-card pricing-card--featured reveal" style="--reveal-delay:0.1s">
+            <div class="pricing-badge">Most popular</div>
+            <div class="pricing-tier">Freelancer</div>
+            <div class="pricing-price">
+              <span class="price-currency">&euro;</span>
+              <span class="price-amount">12</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <p class="pricing-desc">For active freelancers managing multiple clients and streams.</p>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features" role="list">
+              <li>Unlimited streams</li>
+              <li>1 user</li>
+              <li>Orbital Map view</li>
+              <li>Invoice management</li>
+              <li>CSV import</li>
+              <li>Time tracking</li>
+              <li>Revenue calendar</li>
+              <li>PDF invoice export</li>
+            </ul>
+            <a href="#" class="btn-pricing-primary">Start free trial</a>
+            <p class="pricing-trial-note">14-day free trial &mdash; no credit card</p>
+          </div>
+
+          <!-- Creator Pro -->
+          <div class="pricing-card reveal" style="--reveal-delay:0.2s">
+            <div class="pricing-tier">Creator Pro</div>
+            <div class="pricing-price">
+              <span class="price-currency">&euro;</span>
+              <span class="price-amount">22</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <p class="pricing-desc">For creators and solopreneurs scaling a multi-stream business.</p>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features" role="list">
+              <li>Everything in Freelancer</li>
+              <li>Forecast mode</li>
+              <li>Client health score</li>
+              <li>Stripe / PayPal sync</li>
+              <li>3 team members</li>
+              <li>Priority support</li>
+              <li>Custom branding</li>
+              <li>API access (beta)</li>
+            </ul>
+            <a href="#" class="btn-pricing-outline">Start free trial</a>
+            <p class="pricing-trial-note">14-day free trial &mdash; no credit card</p>
+          </div>
+
+        </div>
+
+        <p class="pricing-compare-note reveal">Running a larger agency? <a href="#">Talk to us</a> about a custom plan.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CTA
+    ═══════════════════════════════════════════ -->
+    <section id="cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="section-eyebrow" style="justify-content:center; margin-bottom:var(--space-6);">
+          <span class="section-eyebrow-rule" aria-hidden="true"></span>
+          Ready to launch?
+          <span class="section-eyebrow-rule" aria-hidden="true" style="transform:scaleX(-1);"></span>
+        </div>
+        <h2 class="cta-title reveal" id="cta-title"><em>Enter</em> the universe.</h2>
+        <p class="cta-subtitle reveal">Join freelancers and creators who&rsquo;ve stopped guessing and found their orbit.</p>
+        <div class="cta-actions reveal">
+          <a href="#" class="btn btn-primary btn-lg">Begin your orbit &mdash; free</a>
+          <a href="#" class="btn btn-outline btn-lg">Book a demo</a>
+        </div>
+        <p class="cta-note reveal">No credit card required &mdash; Stargazer plan free forever.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-starline">
+      <span class="footer-starline-rule"></span>
+      <span class="footer-starline-coord">Revenue Intelligence &middot; For Independents &middot; 2026</span>
+      <span class="footer-starline-rule"></span>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-brand-logo" aria-label="Orbit home">
+            <svg width="20" height="20" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+              <ellipse cx="13" cy="13" rx="10" ry="4" stroke="#b87333" stroke-width="1.2" transform="rotate(-35 13 13)" opacity="0.5"/>
+              <ellipse cx="13" cy="13" rx="10" ry="4" stroke="#b87333" stroke-width="1.2" transform="rotate(35 13 13)" opacity="0.85"/>
+              <circle cx="13" cy="13" r="2.5" fill="#b87333"/>
+              <circle cx="20.5" cy="7" r="1.5" fill="#e8dcc8" opacity="0.65"/>
+            </svg>
+            Orbit
+          </a>
+          <p>Track every income stream as a planet in your living business universe.</p>
+          <div class="footer-social" aria-label="Social links">
+            <a href="#" class="footer-social-link" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <details class="footer-col" open>
+          <summary class="footer-col-heading">Product</summary>
+          <ul>
+            <li><a href="#streams">Streams</a></li>
+            <li><a href="#orbital">How it works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </details>
+
+        <details class="footer-col" open>
+          <summary class="footer-col-heading">Company</summary>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Roadmap</a></li>
+          </ul>
+        </details>
+
+        <details class="footer-col" open>
+          <summary class="footer-col-heading">Legal</summary>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Orbit. All rights reserved.</p>
+        <p>Built for independents, everywhere.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    /* ── Theme toggle ── */
+    const root = document.documentElement;
+    const toggles = document.querySelectorAll('[data-theme-toggle]');
+    let theme = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+    root.setAttribute('data-theme', theme);
+
+    function applyTheme(t) {
+      root.setAttribute('data-theme', t);
+      toggles.forEach(function(btn) {
+        btn.innerHTML = t === 'dark'
+          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+        btn.setAttribute('aria-label', 'Switch to ' + (t === 'dark' ? 'light' : 'dark') + ' mode');
+      });
+    }
+    applyTheme(theme);
+    toggles.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        applyTheme(theme);
+      });
+    });
+
+    /* ── Nav scroll state ── */
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ── Hamburger / mobile menu ── */
+    var hamburger = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobile-menu');
+    var menuOpen = false;
+    hamburger.addEventListener('click', function() {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      hamburger.setAttribute('aria-expanded', String(menuOpen));
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        menuOpen = false;
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ── Star field canvas ── */
+    var canvas = document.getElementById('canvas-stars');
+    var ctx = canvas.getContext('2d');
+    var stars = [];
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    function initStars() {
+      stars = [];
+      for (var i = 0; i < 160; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.2 + 0.2,
+          o: Math.random() * 0.6 + 0.1,
+          speed: Math.random() * 0.4 + 0.05
+        });
+      }
+    }
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      var t = Date.now() / 1000;
+      stars.forEach(function(s) {
+        var pulse = s.o * (0.7 + 0.3 * Math.sin(t * s.speed * 2 + s.x));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(232,220,200,' + pulse + ')';
+        ctx.fill();
+      });
+      requestAnimationFrame(drawStars);
+    }
+    resizeCanvas();
+    initStars();
+    drawStars();
+    window.addEventListener('resize', function() { resizeCanvas(); initStars(); }, { passive: true });
+
+    /* ── Nebula canvas (hero bg) ── */
+    var nebula = document.getElementById('canvas-nebula');
+    if (nebula) {
+      var nc = nebula.getContext('2d');
+      function drawNebula() {
+        nebula.width = nebula.offsetWidth || window.innerWidth;
+        nebula.height = nebula.offsetHeight || window.innerHeight;
+        var w = nebula.width, h = nebula.height;
+        nc.clearRect(0, 0, w, h);
+        var g1 = nc.createRadialGradient(w * 0.35, h * 0.45, 0, w * 0.35, h * 0.45, w * 0.55);
+        g1.addColorStop(0,   'rgba(184,115,51,0.20)');
+        g1.addColorStop(0.4, 'rgba(140,80,30,0.10)');
+        g1.addColorStop(1,   'rgba(0,0,0,0)');
+        nc.fillStyle = g1;
+        nc.fillRect(0, 0, w, h);
+        var g2 = nc.createRadialGradient(w * 0.7, h * 0.3, 0, w * 0.7, h * 0.3, w * 0.4);
+        g2.addColorStop(0,   'rgba(74,158,142,0.10)');
+        g2.addColorStop(1,   'rgba(0,0,0,0)');
+        nc.fillStyle = g2;
+        nc.fillRect(0, 0, w, h);
+      }
+      drawNebula();
+      window.addEventListener('resize', drawNebula, { passive: true });
+    }
+
+    /* ── Counter-rotate planets so they stay upright ── */
+    /* Handled via CSS @keyframes counterRotate on .planet-body */
+    document.querySelectorAll('.planet-track').forEach(function(track) {
+      var body = track.querySelector('.planet-body');
+      if (!body) return;
+      var dur = parseFloat(getComputedStyle(track).animationDuration) || 20;
+      var dir = getComputedStyle(track).animationDirection === 'reverse' ? 'normal' : 'reverse';
+      body.style.animation = 'counterRotate ' + dur + 's linear infinite ' + dir;
+    });
+
+    /* ── Reveal on scroll ── */
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          var delay = e.target.style.getPropertyValue('--reveal-delay') || '0s';
+          e.target.style.transitionDelay = delay;
+          e.target.classList.add('in-view');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(function(el) { observer.observe(el); });
+
+    /* ── Footer mobile accordion ── */
+    if (window.innerWidth <= 600) {
+      document.querySelectorAll('.footer-col').forEach(function(col, i) {
+        if (i > 0) col.removeAttribute('open');
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>
