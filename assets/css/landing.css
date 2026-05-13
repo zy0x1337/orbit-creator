@@ -341,6 +341,7 @@ nav.scrolled {
   background: var(--color-surface);
   border-top: 1px solid var(--color-divider);
   border-bottom: 1px solid var(--color-divider);
+  overflow: hidden;
 }
 
 .orbital-header {
@@ -350,15 +351,13 @@ nav.scrolled {
 
 .orbital-header .section-desc { margin-inline: auto; text-align: center; }
 
+/* ── Fluid orbital viewport ── */
 .orbital-viewport {
+  --map-size: min(480px, 90vw);
   position: relative;
-  width: 480px;
-  height: 480px;
+  width: var(--map-size);
+  height: var(--map-size);
   margin-inline: auto;
-}
-
-@media (max-width: 540px) {
-  .orbital-viewport { width: 320px; height: 320px; }
 }
 
 /* Sun */
@@ -391,7 +390,7 @@ nav.scrolled {
   text-transform: uppercase;
 }
 
-/* Orbit rings */
+/* Orbit rings — proportional to --map-size */
 .orbit-ring {
   position: absolute;
   top: 50%;
@@ -400,6 +399,24 @@ nav.scrolled {
   border-radius: 50%;
   border: 1px solid rgba(184, 115, 51, 0.12);
   pointer-events: none;
+}
+
+/* Ring sizes as ratios of --map-size (original: 160, 260, 360, 440 of 480) */
+.orbit-ring:nth-child(1) {
+  width:  calc(var(--map-size) * 0.3333);
+  height: calc(var(--map-size) * 0.3333);
+}
+.orbit-ring:nth-child(2) {
+  width:  calc(var(--map-size) * 0.5417);
+  height: calc(var(--map-size) * 0.5417);
+}
+.orbit-ring:nth-child(3) {
+  width:  calc(var(--map-size) * 0.75);
+  height: calc(var(--map-size) * 0.75);
+}
+.orbit-ring:nth-child(4) {
+  width:  calc(var(--map-size) * 0.9167);
+  height: calc(var(--map-size) * 0.9167);
 }
 
 /* Planet orbits */
@@ -411,6 +428,24 @@ nav.scrolled {
   border-radius: 50%;
   animation: orbitSpin linear infinite;
   transform-origin: center center;
+}
+
+/* Override inline px sizes with fluid equivalents via data-size attr */
+.planet-track[data-size="160"] {
+  width:  calc(var(--map-size) * 0.3333) !important;
+  height: calc(var(--map-size) * 0.3333) !important;
+}
+.planet-track[data-size="260"] {
+  width:  calc(var(--map-size) * 0.5417) !important;
+  height: calc(var(--map-size) * 0.5417) !important;
+}
+.planet-track[data-size="360"] {
+  width:  calc(var(--map-size) * 0.75) !important;
+  height: calc(var(--map-size) * 0.75) !important;
+}
+.planet-track[data-size="440"] {
+  width:  calc(var(--map-size) * 0.9167) !important;
+  height: calc(var(--map-size) * 0.9167) !important;
 }
 
 .planet-body {
@@ -1112,10 +1147,23 @@ footer {
   .footer-col-heading { cursor: pointer; }
   .footer-col-chevron { display: block; }
   details.footer-col:not([open]) ul { display: none; }
+
+  /* Tighter legend on mobile */
+  .orbital-legend { gap: var(--space-3); }
 }
 
 @media (max-width: 480px) {
   .footer-top { grid-template-columns: 1fr; }
   .footer-brand { grid-column: span 1; }
   .hero-coordinates { display: none; }
+
+  /* Shrink map further on very small screens */
+  .orbital-viewport { --map-size: min(300px, 88vw); }
+
+  /* Scale down sun on small screens */
+  .orbit-sun { width: 40px; height: 40px; }
+
+  /* Slightly smaller planets on xs screens */
+  .planet-body { transform: translateX(-50%) translateY(-50%) scale(0.85); }
+  .planet-body:hover { transform: translateX(-50%) translateY(-50%) scale(1.05); }
 }
