@@ -1,0 +1,15 @@
+# Dev & editor
+.DS_Store
+.env
+.env.*
+*.log
+
+# Design system proof (deleted after validation, but just in case)
+design-test.html
+
+# Node (not used, but future-safe)
+node_modules/
+npm-debug.log*
+
+# Git
+.git/
